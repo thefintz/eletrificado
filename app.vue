@@ -8,3 +8,6 @@
     <NuxtPage class="m-4" />
   </main>
 </template>
+
+<script lang="ts" setup>
+</script>

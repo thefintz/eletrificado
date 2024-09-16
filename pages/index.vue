@@ -1,46 +1,35 @@
 <template>
-  <div class="flex justify-center gap-4">
-    <Card class="min-w-[30%] max-w-[30%]">
-      <template #title> Unauthenticated API call </template>
-
-      <template #content>
-        <pre> {{ publicData }} </pre>
-      </template>
-
-      <template #footer>
-        <Button @click="() => publicRefresh()">Fetch</Button>
-      </template>
-    </Card>
-    
-    <Card class="min-w-[30%] max-w-[30%]">
-      <template #title> Authenticated API call </template>
-
-      <template #content>
-        <pre class="text-nowrap overflow-clip"> {{ privateData }} </pre>
-      </template>
-
-      <template #footer>
-        <Button :disabled="status === 'unauthenticated'" @click="() => privateRefresh()">Fetch</Button>
-      </template>
-    </Card>
-
-  </div>
+    <main>
+        <ContentList path="/posts" v-slot="{ list }">
+        <div
+                v-for="post in list"
+                :key="post._path"
+                class="blog-card rounded-2xl overflow-hidden mb-4"
+              >
+                <div class="h-[300px] relative">
+                  <img
+                    v-if="post.thumbnail"
+                    :src="post.thumbnail"
+                    :alt="post.title"
+                    class="absolute w-full h-full object-cover"
+                  />
+                </div>
+        
+                <div class="blog-card--meta my-4 ml-4">
+                  <h3 class="text-2xl font-bold">
+                    <NuxtLink :to="post.slug">{{ post.title }}</NuxtLink>
+                  </h3>
+                  <div class="text-sm text-gray-500 mt-px block">{{ post.date }}</div>
+                  <div v-if="post.tags" class="mt-2 text-xs">
+                    <span v-for="tag in post.tags" class="p-1 rounded mr-2">
+                      {{ tag }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+        </ContentList>
+  </main>
 </template>
 
-<script lang="ts" setup>
-import type { User } from "next-auth";
-import type { Index } from "~/server/api/index.get";
-
-// This tells nuxt-auth that this page is public
-definePageMeta({ auth: false });
-
-const { status } = useAuth();
-
-const [
-	{ data: privateData, refresh: privateRefresh },
-	{ data: publicData, refresh: publicRefresh },
-] = await Promise.all([
-	useFetch<User>("/api/me", { server: false, immediate: false }),
-	useFetch<Index>("/api", { server: false, immediate: false }),
-]);
+<script lang="ts">
 </script>

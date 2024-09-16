@@ -12,12 +12,19 @@ export default defineNuxtConfig({
 	},
 
 	modules: [
+	  "@nuxt/content",
 		"@nuxt/image",
 		"@nuxtjs/tailwindcss",
 		"@primevue/nuxt-module",
 		"@sidebase/nuxt-auth",
 		"nuxt-posthog",
 	],
+	
+	content: {
+    experimental: {
+      search: {}
+    }
+  },
 
 	// https://tailwind.primevue.org/nuxt/
 	// https://github.com/primefaces/primevue-examples/blob/main/nuxt-styled-tailwind/nuxt.config.ts
