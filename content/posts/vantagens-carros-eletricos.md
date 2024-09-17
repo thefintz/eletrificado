@@ -6,7 +6,6 @@ thumbnail: "img/cyber.png"
 slug: "vantagens-carros-eletricos"
 ---
 
-# As Vantagens dos Carros Elétricos
 
 Os carros elétricos oferecem uma série de vantagens que estão atraindo cada vez mais consumidores ao redor do mundo. Aqui estão os principais benefícios:
 

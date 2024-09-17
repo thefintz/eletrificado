@@ -7,8 +7,6 @@ slug: "historia-carros-eletricos"
 ---
 
 
-# A História dos Carros Elétricos
-
 Os carros elétricos não são uma inovação tão recente quanto muitas pessoas pensam. Na verdade, os primeiros protótipos de veículos elétricos surgiram no início do século XIX. Em 1828, o húngaro Ányos Jedlik desenvolveu o primeiro motor elétrico rudimentar, seguido por Robert Anderson, que criou uma carruagem movida a eletricidade em 1832.
 
 Durante o final do século XIX e início do século XX, carros elétricos eram até mais comuns do que veículos a combustão, já que eram mais silenciosos, fáceis de dirigir e não emitiam fumaça. No entanto, a descoberta de grandes reservas de petróleo e o surgimento de motores de combustão interna mais eficientes fizeram com que os carros elétricos perdessem espaço.
