@@ -6,7 +6,6 @@
         :key="post._path"
         class="blog-card rounded-2xl overflow-hidden mb-6 transition-transform transform hover:scale-105"
       >
-        <!-- Envolva todo o card dentro do NuxtLink -->
         <NuxtLink :to="post.slug" class="block w-full h-full">
           <div class="h-[300px] relative">
             <img
@@ -17,7 +16,6 @@
             />
           </div>
 
-          <!-- Meta data sobreposto à imagem -->
           <div class="blog-card--meta absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent text-white p-4">
             <h3 class="text-2xl font-bold">{{ post.title }}</h3>
             <div class="text-sm text-gray-300">{{ post.date }}</div>
