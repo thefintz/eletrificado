@@ -15,9 +15,10 @@ class ElectrekSpider(Spider):
                 
         # Para cada URL, faz um novo request para capturar o conteúdo
         for url in posts_urls:
-            yield Request(url=url, callback=self.parse_post)
+            yield Request(url=url, callback=self.parse_post, meta={'url': url})
         
     def parse_post(self, response):
+        url = response.meta['url']
         title = response.css('h1.h1::text').get()
         author = response.css('span.author-name a::text').get()
         paragraphs = response.css('div.container.med.post-content p::text').getall()
@@ -26,5 +27,6 @@ class ElectrekSpider(Spider):
         yield {
             'title': title,
             'author': author,
-            'text': text
+            'text': text,
+            'url': url
         }
