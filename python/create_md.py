@@ -120,7 +120,7 @@ def format_text(text, img, author, url):
     
 def write_md(text):
     match = re.search(r'slug:\s*"([^"]+)"', text)
-    slug = match.group(1) 
+    slug = match.group(1)
     
     with open(f'../content/posts/{slug}.md', 'w') as file:
         file.write(text)
