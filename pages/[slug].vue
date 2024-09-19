@@ -14,7 +14,7 @@ const {slug} = useRoute().params
           v-if="doc.thumbnail"
           :src="doc.thumbnail"
           :alt="doc.title"
-          class="w-full"
+          class=" w-1/2 mx-auto"
         />
       </header>
       <div class="mt-4 content p-5">

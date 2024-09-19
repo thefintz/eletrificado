@@ -2,9 +2,9 @@ import json
 import re
 from openai import OpenAI
 from scrapy.utils.python import List
-
-# from dotenv import load_dotenv
-# load_dotenv()
+from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
 client = OpenAI()
 
@@ -82,7 +82,9 @@ def translate_post(post):
     message = response.choices[0].message.content
     return message
     
-def format_text(text):
+def format_text(text, img, author, url):
+    now = datetime.now()
+    now = now.strftime("%Y-%m-%d %H:%M:%S")
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -94,9 +96,16 @@ def format_text(text):
             {
                 "role": "user",
                 "content": (
-                    f"Given the following text and title, improve it and make it compatible with the Markdown format. "
-                    f"You also must include the Front Matter with the following informations: title, description, tags and slug."
-                    f"The thumbnail should also be set, but with img/cyber.png for now (avoid the ``` markers). Text:\n{text}"
+                    f"Given the following text and title, improve it and make it compatible with the Markdown format."
+                    f"You also must include the Front Matter with the following informations: title, description, tags, slug, author({author}) and date/time({now})."
+                    "The date and time should be in the following format: DD/MM/YYYY HH:MM."
+                    f"The thumbnail should also be set, but with the following url:{img} ." 
+                    "For improving the text itself, consider that it is a text related to electric cars news, and should be informative and engaging."
+                    "Try using different headers, bullet points and other Markdown features to make the text more readable."
+                    "Dont use the ``` markers in the markdown text, as they are not necessary in this context and will make the post page fail."
+                    "Just send the text that will be inside of the Markdown file."
+                    f"Also, include in the end of the text that the post was based on this Electrek post and author: URL: {url} Author: {author}."
+                    f"\nText:\n{text}"
                 )
             },
             {
@@ -118,11 +127,11 @@ def write_md(text):
 
 def main():
     scraped_posts = read_json('electrek.json')
-    chosen_posts = choose_posts(scraped_posts, 3)
+    chosen_posts = choose_posts(scraped_posts, len(scraped_posts))
 
     for post in chosen_posts:
         translated_post = translate_post(post)
-        formated_post = format_text(translated_post)
+        formated_post = format_text(translated_post, post['image'], post['author'], post['url'])
         write_md(formated_post)
 
 

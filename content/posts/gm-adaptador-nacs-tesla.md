@@ -1,31 +1,54 @@
 ---
-title: "GM Lança seu Adaptador NACS Aprovado, Dando Acesso aos Motoristas ao Sistema de Recarga da Tesla"
-description: "Após anunciar a transição para o NACS da Tesla, a GM lança um adaptador que permite o acesso a milhares de carregadores Tesla."
-tags: [GM, NACS, Tesla, veículos elétricos, carregadores]
+title: "GM Lança seu Adaptador NACS Aprovado, Dando Acesso aos Motoristas à Rede de Carregamento da Tesla"
+description: "A GM finalmente disponibiliza um adaptador NACS aprovado, permitindo que seus motoristas acessem a ampla rede de Superchargers da Tesla."
+tags: [GM, NACS, Tesla, Carregamento Elétrico, Veículos Elétricos]
 slug: "gm-adaptador-nacs-tesla"
-thumbnail: "img/cyber.png"
+author: "Scooter Doll"
+date: "19/09/2024 16:47"
+thumbnail: "https://electrek.co/wp-content/uploads/sites/3/2024/09/GM-Tesla-adapter-Chevy.jpg?quality=82&strip=all&w=1400"
 ---
 
-Mais de um ano após as montadoras tradicionais anunciarem a transição da porta de carregamento CCS para o NACS da Tesla, os clientes de veículos elétricos da GM finalmente podem adquirir um adaptador aprovado, que dá acesso a centenas de milhares de carregadores Tesla.
+Mais de um ano após os fabricantes de automóveis tradicionais anunciarem a transição do conector de carregamento CCS para o NACS da Tesla, os clientes de veículos elétricos da GM finalmente podem adquirir um adaptador aprovado e acessar centenas de milhares de carregadores da Tesla.
 
-A notícia de hoje já era esperada há muito tempo pelos motoristas de veículos elétricos da marca GM. Este é mais um passo monumental na adoção de um plugue de carregamento verdadeiramente universal pela indústria automobilística americana.
+As notícias de hoje estavam sendo esperadas há muito tempo pelos motoristas de veículos elétricos da marca GM. Essa é mais uma grande conquista na adoção de um conector de carregamento verdadeiramente universal pela indústria automobilística americana.
 
-Em junho de 2023, a GM foi uma das primeiras montadoras a anunciar essa transição. A empresa revelou que os futuros modelos de veículos elétricos (BEV) terão a porta nativamente e que os BEVs existentes poderão acessar a rede de carregamento por meio de um adaptador.
+## A Transição para o NACS
 
-Desde então, praticamente todas as montadoras começaram a adotar o NACS e a obter adaptadores Tesla aprovados, incluindo Ford, Hyundai, BMW, entre outras.
+Em junho de 2023, a GM foi um dos primeiros fabricantes a anunciar a transição do conector CCS para o NACS da Tesla. A montadora informou que os futuros modelos de veículos elétricos a bateria (BEV) contarão com o conector nativamente, enquanto os BEVs existentes poderão acessar a rede de carregamento utilizando um adaptador.
 
-As redes de carregamento nos EUA, como a ChargePoint, também estão implementando soluções para veículos de todas as marcas e modelos, aumentando a versatilidade das redes locais e aliviando os estresses enfrentados por motoristas de veículos elétricos, especialmente quando precisam recarregar e não têm o plugue correto ou não estão certificados para acessar certas redes de carregamento.
+Desde então, praticamente todos os principais fabricantes de automóveis têm adotado o NACS e adquirido adaptadores aprovados da Tesla, incluindo:
 
-Enquanto aguardamos os futuros modelos da GM com conectores NACS incorporados, a montadora já iniciou a venda do adaptador, permitindo que motoristas de veículos elétricos acessem imediatamente muitos carregadores de Nível 2 e de carregamento rápido DC na rede atual da Tesla.
+- **Ford**
+- **Hyundai**
+- **BMW**
 
-De acordo com um comunicado da GM, o adaptador NACS já está à venda através dos aplicativos das marcas de veículos da GM, oferecendo a esses motoristas acesso à rede Supercharger da Tesla – uma das maiores e mais confiáveis nos EUA.
+## Expansão das Redes de Carregamento
 
-O adaptador NACS permite que os clientes da GM acessem quase 232.000 carregadores públicos, incluindo 17.800 Superchargers da Tesla. O vice-presidente da GM Energy, Wade Sheffer, comentou:
+Redes de carregamento nos EUA, como a ChargePoint, também começaram a oferecer suporte a todos os modelos e marcas. Isso ajuda a aumentar a versatilidade das redes locais e alivia alguns dos problemas enfrentados por motoristas de veículos elétricos ao recarregar, principalmente quando não têm o conector correto ou não estão certificados para acessar uma rede de carregamento específica.
 
-> “Os esforços contínuos da GM para ajudar a acelerar a expansão da infraestrutura de carregamento público são uma parte integral do nosso compromisso com um futuro totalmente elétrico. Habilitar o acesso a ainda mais carregadores rápidos publicamente disponíveis representa mais uma maneira de a GM se concentrar em melhorar ainda mais a experiência do cliente e tornar a transição para os elétricos mais fluida."
+Enquanto aguardamos os futuros modelos da GM com conectores NACS da Tesla integrados, a montadora já começou a vender um adaptador aprovado que oferece acesso imediato a muitos carregadores de Nível 2 e carregadores rápidos DC na rede atual da Tesla.
 
-Segundo a GM, motoristas de veículos elétricos do seu portfólio de marcas poderão adquirir o adaptador Tesla por meio de seus respectivos aplicativos, com um custo de US$ 225. O aplicativo permitirá que localizem os Superchargers da Tesla mais próximos, verifiquem o status da estação, iniciem uma carga e realizem o pagamento pela sessão.
+## Detalhes do Adaptador NACS
 
-A GM assegura que cada adaptador Tesla foi desenvolvido para garantir que os clientes possam carregar seus veículos em qualquer carregador que ofereça o Padrão de Carregamento Norte-Americano. A montadora está utilizando vários fornecedores para produzi-los, garantindo que todos que desejam um possam obtê-lo.
+De acordo com um comunicado da GM, seu adaptador NACS aprovado está à venda através dos aplicativos das marcas de veículos da GM, permitindo aos motoristas acesso à rede Supercharger da Tesla - uma das maiores e mais confiáveis dos EUA.
 
-Os adaptadores começarão a ser distribuídos nos EUA imediatamente, com planos de expansão para o Canadá ainda este ano. Você pode adquiri-los através dos canais oficiais da GM.
+**O que isso significa para os motoristas da GM?**
+
+- **Acesso a quase 232.000 carregadores públicos**.
+- **17.800 Superchargers da Tesla** disponíveis.
+
+O vice-presidente da GM Energy, Wade Sheffer, comentou:
+
+> "Os esforços contínuos da GM para ajudar a acelerar a expansão da infraestrutura de carregamento público são uma parte integrante do nosso compromisso com um futuro totalmente elétrico. Permitir o acesso a ainda mais carregadores rápidos disponíveis publicamente representa mais uma forma pela qual a GM está focada em melhorar ainda mais a experiência do cliente e tornar a transição para o elétrico mais fluida."
+
+Os motoristas de veículos elétricos de seu portfólio poderão adquirir o adaptador Tesla através de seus respectivos aplicativos por **US$ 225**. Além disso, eles poderão usar esse mesmo aplicativo para localizar os Superchargers da Tesla mais próximos, verificar o status da estação, iniciar uma carga e pagar pela sessão.
+
+A GM assegura que cada adaptador Tesla foi desenvolvido para garantir que os clientes possam carregar seus veículos elétricos em qualquer carregador que utilize o Padrão de Carregamento Norte-Americano. A montadora está trabalhando com vários fornecedores para garantir que todos que desejam um adaptador possam obtê-lo.
+
+Os adaptadores começarão a ser disponibilizados nos EUA imediatamente, com planos de expansão para o Canadá ainda este ano.
+
+---
+
+Este post foi baseado em uma publicação da Electrek.  
+**URL:** [Electrek Post](https://electrek.co/2024/09/18/gm-releases-approved-nacs-adapter-givingaccess-tesla-charging-network/)  
+**Autor:** Scooter Doll.

@@ -1,6 +1,6 @@
 from scrapy import Spider, Request
 
-MAIN_PAGE_URL = 'https://electrek.co/"'
+MAIN_PAGE_URL = 'https://electrek.co/'
 
 
 class ElectrekSpider(Spider):
@@ -21,12 +21,17 @@ class ElectrekSpider(Spider):
         url = response.meta['url']
         title = response.css('h1.h1::text').get()
         author = response.css('span.author-name a::text').get()
+        image = response.css('div.container.med.post-content img::attr(src)').get()
         paragraphs = response.css('div.container.med.post-content p::text').getall()
         text = "\n\n".join(paragraphs)
+        
+        for img in response.css('img.skip-lazy.wp-post-image::attr(src)').getall():
+            img_url = response.urljoin(img)
         
         yield {
             'title': title,
             'author': author,
             'text': text,
-            'url': url
+            'url': url,
+            'image': img_url
         }
