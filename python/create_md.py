@@ -3,8 +3,8 @@ import re
 from openai import OpenAI
 from scrapy.utils.python import List
 from datetime import datetime
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 client = OpenAI()
 
