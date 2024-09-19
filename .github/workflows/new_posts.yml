@@ -33,18 +33,11 @@ jobs:
           python create_md.py
           
       # Adicionando os arquivos gerados, commitando e enviando para o repositório
-      - name: Configure Git
+      - name: Add and Commit changes
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-
-      - name: Add and Commit changes
-        run: |
           git add ./content
           git add ./python/processed_links.json
           git commit -m "Create new posts"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git push
