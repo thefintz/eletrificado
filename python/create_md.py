@@ -1,10 +1,10 @@
 import json
 import re
 from openai import OpenAI
-from dotenv import load_dotenv
 from scrapy.utils.python import List
 
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 client = OpenAI()
 
