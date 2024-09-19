@@ -1,8 +1,10 @@
 name: Generate New Posts
 
 on:
+  push:
+    branches:
+      - master
   schedule:
-    - push
     - cron: '0 0 * * *'
       
 jobs:
