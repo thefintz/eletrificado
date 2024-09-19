@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+  workflow_run:
+    workflows: ["Generate New Posts"]
+    types:
+      - completed
 
 jobs:
   build:
@@ -32,4 +36,4 @@ jobs:
         with:
           node-version: current
           cache: npm
-      - run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+      - run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --project=$VERCEL_PROJECT_ID
