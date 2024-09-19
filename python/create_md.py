@@ -45,6 +45,22 @@ def read_json(file) -> List[dict]:
         
     return data
     
+def choose_posts(posts, n):
+    used_links = read_json('processed_links.json')
+    posts = [post for post in posts if post['url'] not in used_links]
+    new_posts = posts[:n]
+    
+    update_processed_links(used_links, [post['url'] for post in new_posts])
+    
+    return new_posts
+    
+def update_processed_links(processed, new):
+    for link in new:
+        processed.append(link)
+        
+    with open('processed_links.json', 'w') as file:
+        json.dump(processed, file, indent=4)
+
 def translate_post(post):
     text = post['text']
     title = post['title']
@@ -102,11 +118,12 @@ def write_md(text):
 
 def main():
     scraped_posts = read_json('electrek.json')
+    chosen_posts = choose_posts(scraped_posts, 3)
 
-    # for post in scraped_posts:
-    #     translated_post = translate_post(post)
-    #     formated_post = format_text(translated_post)
-    #     write_md(formated_post)
+    for post in chosen_posts:
+        translated_post = translate_post(post)
+        formated_post = format_text(translated_post)
+        write_md(formated_post)
 
 
 if __name__ == '__main__':
