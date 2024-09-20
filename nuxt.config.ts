@@ -79,8 +79,8 @@ export default defineNuxtConfig({
 		// Eg. in the browser
 		public: {
 			posthog: {
-				host: "",
-				publicKey: "",
+			  host: process.env.NUXT_POSTHOG_HOST,
+        publicKey: process.env.NUXT_POSTHOG_PUBLIC_KEY,
 			},
 		},
 	},

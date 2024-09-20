@@ -35,7 +35,22 @@
   </main>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+// import type { User } from "next-auth";
+// import type { Index } from "~/server/api/index.get";
+
+// This tells nuxt-auth that this page is public
+definePageMeta({ auth: false });
+
+// const { status } = useAuth();
+
+// const [
+// 	{ data: privateData, refresh: privateRefresh },
+// 	{ data: publicData, refresh: publicRefresh },
+// ] = await Promise.all([
+// 	useFetch<User>("/api/me", { server: false, immediate: false }),
+// 	useFetch<Index>("/api", { server: false, immediate: false }),
+// ]);
 </script>
 
 <style scoped>
