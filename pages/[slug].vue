@@ -1,4 +1,5 @@
 <script setup lang="ts">
+definePageMeta({ auth: false });
 const {slug} = useRoute().params
 </script>
 
@@ -14,7 +15,7 @@ const {slug} = useRoute().params
           v-if="doc.thumbnail"
           :src="doc.thumbnail"
           :alt="doc.title"
-          class=" w-1/2 mx-auto"
+          class="lg:w-1/2 mx-auto md:w-3/4 sm:w-full rounded-xl shadow-lg mb-4"
         />
       </header>
       <div class="mt-4 content p-5">
