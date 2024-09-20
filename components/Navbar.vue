@@ -1,10 +1,26 @@
 <template>
-  <Menubar :model="items" />
+    <div>
+        <Menubar :model="items">
+        <template #end>
+            <input
+            type="text"
+            placeholder="Buscar..."
+            class="p-2 border rounded-lg"
+            />
+            <!-- v-model="searchQuery" -->
+            <!-- @input="searchPosts" -->
+      </template>
+    </Menubar>
+  </div>
 </template>
 
 <script setup lang="ts">
+// The commented part  
+// import { ref } from 'vue'
+
 const router = useRouter();
 const { signIn, signOut } = useAuth();
+// const searchQuery = ref('');
 
 type Item = {
   label: string;
@@ -41,4 +57,10 @@ const items = ref<Item[]>([HOME, LOGIN]);
 if (status.value === "authenticated") {
   items.value = [HOME, PROFILE, LOGOUT];
 }
+
+// const searchPosts = () => {
+//   if (searchQuery.value.trim() !== '') {
+//     router.push(`/search?q=${encodeURIComponent(searchQuery.value)}`);
+//   }
+// };
 </script>

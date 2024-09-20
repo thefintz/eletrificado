@@ -1,6 +1,27 @@
 import Aura from "@primevue/themes/aura";
 
 export default defineNuxtConfig({
+  app: {
+       head: {
+         title: 'Eletrificado - Notícias sobre Carros Elétricos',
+          meta: [
+            // Open Graph Meta Tags (para Facebook, LinkedIn, etc.)
+            { property: 'og:title', content: 'Eletrificado - Notícias sobre Carros Elétricos' },
+            { property: 'og:description', content: 'Fique por dentro das últimas notícias sobre carros elétricos.' },
+            { property: 'og:image', content: '/path-to-image.jpg' }, // Imagem para preview
+            { property: 'og:url', content: 'https://seusite.com' },
+            { property: 'og:type', content: 'website' },
+    
+            // Twitter Card Meta Tags
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:title', content: 'Eletrificado - Notícias sobre Carros Elétricos' },
+            { name: 'twitter:description', content: 'Fique atualizado sobre os carros elétricos.' },
+            { name: 'twitter:image', content: '/path-to-image.jpg' }, // Imagem para Twitter Card
+          ],
+          link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+       }
+   },
+  
 	compatibilityDate: "2024-08-09",
 
 	typescript: {
