@@ -15,7 +15,8 @@
         </div>
       </div>
 
-      <div class="absolute right-0 flex items-center">
+      <!-- Navbar -->
+      <div class="absolute right-0 flex items-center bg-transparent">
         <Navbar/>
       </div>
     </header>

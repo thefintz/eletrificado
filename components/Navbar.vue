@@ -1,6 +1,6 @@
 <template>
-  <div class="navbar-container bg-gray-900">
-    <Menubar :model="items" class="bg-gray-900 text-white navbar">
+  <div class="navbar-container bg-transparent">
+    <Menubar :model="items" class="bg-transparent text-white navbar">
     </Menubar>
   </div>
 </template>
