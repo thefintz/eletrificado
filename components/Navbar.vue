@@ -1,26 +1,13 @@
 <template>
-    <div>
-        <Menubar :model="items">
-        <template #end>
-            <input
-            type="text"
-            placeholder="Buscar..."
-            class="p-2 border rounded-lg"
-            />
-            <!-- v-model="searchQuery" -->
-            <!-- @input="searchPosts" -->
-      </template>
+  <div class="navbar-container">
+    <Menubar :model="items" class="bg-transparent text-white navbar">
     </Menubar>
   </div>
 </template>
 
 <script setup lang="ts">
-// The commented part  
-// import { ref } from 'vue'
-
 const router = useRouter();
 const { signIn, signOut } = useAuth();
-// const searchQuery = ref('');
 
 type Item = {
   label: string;
@@ -57,10 +44,25 @@ const items = ref<Item[]>([HOME, LOGIN]);
 if (status.value === "authenticated") {
   items.value = [HOME, PROFILE, LOGOUT];
 }
-
-// const searchPosts = () => {
-//   if (searchQuery.value.trim() !== '') {
-//     router.push(`/search?q=${encodeURIComponent(searchQuery.value)}`);
-//   }
-// };
 </script>
+
+<style scoped>
+.navbar {
+  outline: none; /* Remove contorno */
+  border: none; /* Remove borda */
+  box-shadow: none; /* Remove qualquer sombra extra */
+}
+
+/* Ajustar o espaçamento para afastar da borda da tela */
+.navbar-container {
+  padding: 0 20px; /* Adiciona espaçamento nas laterais */
+}
+
+.Menubar a {
+  color: white;
+}
+
+.Menubar a:hover {
+  color: #cbd5e0; /* Um hover com uma leve mudança de cor */
+}
+</style>

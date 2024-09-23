@@ -9,7 +9,7 @@
     <template #title> {{ data?.name }} </template>
 
     <template #content>
-      <pre> {{ data }} </pre>
+      <pre> {{ data?.email }} </pre>
     </template>
   </Card>
 </template>

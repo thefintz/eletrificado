@@ -18,7 +18,7 @@
 
           <div class="blog-card--meta absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent text-white p-4">
             <h3 class="text-2xl font-bold">{{ post.title }}</h3>
-            <div class="text-sm text-gray-300">{{ post.date }}</div>
+            <div class="text-sm text-gray-300">{{ post.date.split(' ')[0] }}</div>
             <div v-if="post.tags" class="mt-2 text-xs flex space-x-2">
               <span
                 v-for="tag in post.tags"

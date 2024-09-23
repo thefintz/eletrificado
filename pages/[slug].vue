@@ -9,7 +9,7 @@ const {slug} = useRoute().params
       <header>
         <div class="text-center p-5">
           <h1 class="text-4xl font-bold lg:w-2/3 mx-auto">{{ doc.title }}</h1>
-          <p class="text-sm mt-2">{{ doc.date }}</p>
+          <p class="text-sm mt-2">{{ doc.date.split(' ')[0] }}</p>
         </div>
         <img
           v-if="doc.thumbnail"
