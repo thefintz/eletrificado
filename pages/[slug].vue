@@ -4,7 +4,7 @@ const {slug} = useRoute().params
 </script>
 
 <template>
-  <article class="rounded-2xl">
+  <article class="rounded-2xl mx-auto max-w-4xl px-4 py-8">
     <ContentDoc :path="`/posts/${slug}`" v-slot="{ doc }">
       <header>
         <div class="text-center p-5">
@@ -15,10 +15,10 @@ const {slug} = useRoute().params
           v-if="doc.thumbnail"
           :src="doc.thumbnail"
           :alt="doc.title"
-          class="lg:w-1/2 mx-auto md:w-3/4 sm:w-full rounded-xl shadow-lg mb-4"
+          class="mx-auto md:w-3/4 sm:w-full rounded-xl shadow-lg mb-4"
         />
       </header>
-      <div class="mt-4 content p-5">
+      <div class="mt-4 content p-5 text-left">
         <ContentRenderer :value="doc" />
       </div>
     </ContentDoc>
