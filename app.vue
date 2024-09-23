@@ -15,7 +15,6 @@
         </div>
       </div>
 
-      <!-- Navbar -->
       <div class="absolute right-0 flex items-center">
         <Navbar/>
       </div>

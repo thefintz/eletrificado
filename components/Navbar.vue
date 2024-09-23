@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-container">
+  <div class="navbar-container bg-gray-900">
     <Menubar :model="items" class="bg-gray-900 text-white navbar">
     </Menubar>
   </div>
