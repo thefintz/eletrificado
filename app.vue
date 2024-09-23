@@ -17,7 +17,7 @@
 
       <!-- Navbar -->
       <div class="absolute right-0 flex items-center">
-        <Navbar class="transparent-navbar" />
+        <Navbar/>
       </div>
     </header>
 
@@ -35,15 +35,11 @@
 .main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* 100% da altura da viewport */
+  min-height: 100vh;
 }
 
 .header {
-  background-color: #1a202c; /* Uma cor diferente, mas ainda similar ao estilo geral */
-}
-
-.transparent-navbar {
-  background-color: transparent; /* Torna a navbar transparente */
+  background-color: #1a202c;
 }
 
 .navbar a {
@@ -56,6 +52,6 @@
 }
 
 .container {
-  flex-grow: 1; /* Faz o conteúdo crescer e ocupar o espaço disponível */
+  flex-grow: 1;
 }
 </style>

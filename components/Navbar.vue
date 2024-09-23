@@ -48,14 +48,13 @@ if (status.value === "authenticated") {
 
 <style scoped>
 .navbar {
-  outline: none; /* Remove contorno */
-  border: none; /* Remove borda */
-  box-shadow: none; /* Remove qualquer sombra extra */
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
-/* Ajustar o espaçamento para afastar da borda da tela */
 .navbar-container {
-  padding: 0 20px; /* Adiciona espaçamento nas laterais */
+  padding: 0 20px;
 }
 
 .Menubar a {
@@ -63,6 +62,6 @@ if (status.value === "authenticated") {
 }
 
 .Menubar a:hover {
-  color: #cbd5e0; /* Um hover com uma leve mudança de cor */
+  color: #cbd5e0;
 }
 </style>
