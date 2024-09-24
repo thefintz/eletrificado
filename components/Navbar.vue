@@ -19,34 +19,28 @@ type Item = {
   command: () => void;
 };
 
-const HOME: Item = {
-  label: "Home",
-  icon: "pi pi-home",
-  command: () => router.push("/"),
-};
-
 const LOGIN: Item = {
-  label: "Login",
+  label: "Entrar",
   icon: "pi pi-sign-in",
   command: () => signIn("auth0"),
 };
 
 const PROFILE: Item = {
-  label: "Profile",
+  label: "Perfil",
   icon: "pi pi-user",
   command: () => router.push("/me"),
 };
 
 const LOGOUT: Item = {
-  label: "Logout",
+  label: "Sair",
   icon: "pi pi-sign-out",
   command: () => signOut({ callbackUrl: "/" }),
 };
 
 const { status } = useAuth();
-const items = ref<Item[]>([HOME, LOGIN]);
+const items = ref<Item[]>([LOGIN]);
 if (status.value === "authenticated") {
-  items.value = [HOME, PROFILE, LOGOUT];
+  items.value = [PROFILE, LOGOUT];
 }
 </script>
 

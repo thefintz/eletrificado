@@ -25,7 +25,6 @@
       Quero ajudar!
     </button>
 
-    <!-- Aviso de erro -->
     <p v-if="errorMessage" class="text-red-500 mt-4">{{ errorMessage }}</p>
   </aside>
 </template>
@@ -34,20 +33,18 @@
 import { ref } from 'vue'
 
 const amount = ref<number | null>(null)
-const customAmount = ref<number | null>(null)
 const errorMessage = ref<string | null>(null)
 const presets = [500, 1000, 5000, 10000]
 
 const selectAmount = (preset: number) => {
   amount.value = preset
-  customAmount.value = null
   errorMessage.value = null
 }
 
 const generatePaymentLink = async () => {
-  const selectedAmount = customAmount.value ? customAmount.value * 100 : amount.value
+  const selectedAmount = amount.value
 
-  if (!selectedAmount || selectedAmount <= 0) {
+  if (!selectedAmount) {
     errorMessage.value = 'Por favor, insira ou selecione um valor válido.'
     return
   }
