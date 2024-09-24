@@ -95,6 +95,11 @@ export default defineNuxtConfig({
 			clientId: "",
 			clientSecret: "",
 		},
+		
+		stripe: {
+  		secretKey: "",
+  		successUrl: "",
+  	},
 
 		// Configurations inside the `public` object are available to the client.
 		// Eg. in the browser
