@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <Menubar :model="items" class="bg-transparent border-transparent">
+    <Menubar :model="items">
       <template #item="{ item, props }">
-        <a v-ripple v-bind="props.action" class="hover:bg-gray-700 rounded-md">
+        <a v-ripple v-bind="props.action">
             <span :class="item.icon" />
             <span>{{ item.label }}</span>
         </a>
       </template>
     </Menubar>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -51,3 +49,10 @@ if (status.value === "authenticated") {
   items.value = [HOME, PROFILE, LOGOUT];
 }
 </script>
+
+<style scoped>
+.p-menubar {
+    background: transparent;
+    border: none;
+}
+</style>
