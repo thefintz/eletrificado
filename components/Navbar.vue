@@ -1,6 +1,12 @@
 <template>
-  <div class="navbar-container bg-transparent">
-    <Menubar :model="items" class="bg-transparent text-white navbar">
+  <div>
+    <Menubar :model="items" class="bg-transparent border-transparent">
+      <template #item="{ item, props }">
+        <a v-ripple v-bind="props.action" class="hover:bg-gray-700 rounded-md">
+            <span :class="item.icon" />
+            <span>{{ item.label }}</span>
+        </a>
+      </template>
     </Menubar>
   </div>
 </template>
@@ -45,23 +51,3 @@ if (status.value === "authenticated") {
   items.value = [HOME, PROFILE, LOGOUT];
 }
 </script>
-
-<style scoped>
-.navbar {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-
-.navbar-container {
-  padding: 0 20px;
-}
-
-.Menubar a {
-  color: white;
-}
-
-.Menubar a:hover {
-  color: #cbd5e0;
-}
-</style>
