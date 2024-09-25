@@ -3,6 +3,8 @@ import re
 from openai import OpenAI
 from scrapy.utils.python import List
 from datetime import datetime
+
+# Uncomment for local development
 # from dotenv import load_dotenv
 # load_dotenv()
 
@@ -104,7 +106,8 @@ def format_text(text, img, author, url):
                     "Try using different headers, bullet points and other Markdown features to make the text more readable."
                     "Dont use the ``` markers in the markdown text, as they are not necessary in this context and will make the post page fail."
                     "Just send the text that will be inside of the Markdown file."
-                    f"Also, include in the end of the text that the post was based on this Electrek post and author: URL: {url} Author: {author}."
+                    f"Also, include in the end of the text that the post was based on this other website (take a look at the url to get it's name) post and author: "
+                    f"URL: {url} Author: {author}."
                     f"\nText:\n{text}"
                 )
             },
@@ -126,13 +129,15 @@ def write_md(text):
         file.write(text)
 
 def main():
-    scraped_posts = read_json('electrek.json')
-    chosen_posts = choose_posts(scraped_posts, len(scraped_posts))
-
-    for post in chosen_posts:
-        translated_post = translate_post(post)
-        formated_post = format_text(translated_post, post['image'], post['author'], post['url'])
-        write_md(formated_post)
+    sources = ['electrek.json', 'insideevs.json']
+    for source in sources:
+        scraped_posts = read_json(source)
+        chosen_posts = choose_posts(scraped_posts, 1)
+    
+        for post in chosen_posts:
+            translated_post = translate_post(post)
+            formated_post = format_text(translated_post, post['image'], post['author'], post['url'])
+            write_md(formated_post)
 
 
 if __name__ == '__main__':
