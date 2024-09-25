@@ -112,3 +112,12 @@ Set the following environment variables:
 ```conf
 NUXT_STRIPE_SECRET_KEY=sk_**********
 ```
+
+### OpenAI
+
+We are using OpenAI to generate the content of the posts, so if you want to test it locally you'll need to create a 
+`.env` file inside `/python` folder with your OpenAI secret token:
+
+```conf
+OPENAI_API_KEY=sk-**********
+```
