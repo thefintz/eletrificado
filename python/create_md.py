@@ -132,7 +132,7 @@ def main():
     sources = ['electrek.json', 'insideevs.json']
     for source in sources:
         scraped_posts = read_json(source)
-        chosen_posts = choose_posts(scraped_posts, 1)
+        chosen_posts = choose_posts(scraped_posts, len(scraped_posts))
     
         for post in chosen_posts:
             translated_post = translate_post(post)
