@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Veja como o interior do EV9 GT da Kia, topo de linha, se compara ao atual GT-Line [Vídeo]"
 description: "Descubra as novidades do Kia EV9 GT e como seu interior se destaca."
@@ -39,4 +38,3 @@ O modelo **EV9 GT** da Kia deve ser lançado no início do próximo ano. Embora 
 A expectativa para o Kia EV9 GT é alta, com muitas melhorias no design e desempenho prometidas. Fique atento para mais novidades!
 
 Esta postagem foi baseada no artigo do site Electrek, com o autor **Peter Johnson**. Você pode conferir o conteúdo original [aqui](https://electrek.co/2024/09/25/kias-range-topping-ev9-gt-interior-vs-current-gt-line-video/).
-```

@@ -4,7 +4,7 @@ description: "O Kia EV9 está passando por um recall devido a problemas no Assis
 tags: [Kia, EV9, recall, veículos elétricos, segurança]
 slug: "kia-ev9-recall-assistente-estacionamento"
 author: "Iulian Dnistran"
-date/time: "26/09/2024 00:10"
+date: "26/09/2024 00:10"
 thumbnail: "https://cdn.motor1.com/images/mgl/zxQ228/s3/kia-ev9-first-drive-topshot.jpg"
 ---
 

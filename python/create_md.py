@@ -17,6 +17,8 @@ MD_EXAMPLE = (
     tags: [carros elétricos, veículos elétricos, sustentabilidade]
     thumbnail: "img/cyber.png"
     slug: "vantagens-carros-eletricos"
+    author: "John Doe"
+    date: "26/09/2024 00:12"
     ---
     
     
@@ -86,7 +88,7 @@ def translate_post(post):
     
 def format_text(text, img, author, url):
     now = datetime.now()
-    now = now.strftime("%Y-%m-%d %H:%M:%S")
+    now = now.strftime("%Y-%m-%d %H:%M")
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",

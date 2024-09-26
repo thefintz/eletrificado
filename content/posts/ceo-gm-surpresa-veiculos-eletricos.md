@@ -4,7 +4,7 @@ description: "Reflexões da CEO da GM sobre a recepção política dos veículos
 tags: [carros elétricos, General Motors, Mary Barra, política, Nissan]
 slug: "ceo-gm-surpresa-veiculos-eletricos"
 author: "Patrick George"
-date: "26/09/2024 00:11:15"
+date: "26/09/2024 00:11"
 thumbnail: "https://cdn.motor1.com/images/mgl/g4zM9N/s3/escalade-iq-top.jpg"
 ---
 
