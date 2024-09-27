@@ -1,6 +1,7 @@
 import json
 import re
 from openai import OpenAI
+from pydantic import BaseModel
 from scrapy.utils.python import List
 from datetime import datetime
 
@@ -10,18 +11,15 @@ from datetime import datetime
 
 client = OpenAI()
 
+class MarkdownFormat(BaseModel):
+    title: str
+    description: str
+    tags: List[str]
+    slug: str
+    text: str
+
 MD_EXAMPLE = (
-    '''---
-    title: "As Vantagens dos Carros Elétricos"
-    description: "Entenda os principais benefícios de adotar veículos elétricos"
-    tags: [carros elétricos, veículos elétricos, sustentabilidade]
-    thumbnail: "img/cyber.png"
-    slug: "vantagens-carros-eletricos"
-    author: "John Doe"
-    date: "26/09/2024 00:12"
-    ---
-    
-    
+    '''
     Os carros elétricos oferecem uma série de vantagens que estão atraindo cada vez mais consumidores ao redor do mundo. Aqui estão os principais benefícios:
     
     ## 1. Redução de Emissões
@@ -40,7 +38,7 @@ MD_EXAMPLE = (
     Os carros elétricos oferecem uma experiência de condução incrivelmente suave e silenciosa. Como os motores elétricos geram torque instantaneamente, os veículos oferecem aceleração rápida e suave, sem o barulho de um motor de combustão interna. Isso também contribui para a redução da poluição sonora nas cidades.
     
     O futuro do transporte é, sem dúvida, elétrico. Com a rápida evolução das tecnologias de bateria e a expansão da infraestrutura de recarga, os carros elétricos estão se tornando uma escolha cada vez mais acessível e vantajosa.
-'''
+    '''
 )
 
 def read_json(file) -> List[dict]:
@@ -86,24 +84,21 @@ def translate_post(post):
     message = response.choices[0].message.content
     return message
     
-def format_text(text, img, author, url):
-    now = datetime.now()
-    now = now.strftime("%Y-%m-%d %H:%M")
-
-    response = client.chat.completions.create(
+def format_text(text, img, author, url, time) -> str:
+    response = client.beta.chat.completions.parse(
         model="gpt-4o-mini",
         messages=[
             {
                 "role": "system",
-                "content": "You will be provided with a text in Brazilian Portuguese, and your task is to improve it and make it compatible with the Markdown format."
+                "content": ("You will be provided with a text in Brazilian Portuguese, and your task is to improve it and make it compatible with the Markdown format."
+                            "You also must include the following informations: title, description, tags, slug, author and date/time." 
+                )
             },
             {
                 "role": "user",
                 "content": (
                     f"Given the following text and title, improve it and make it compatible with the Markdown format."
-                    f"You also must include the Front Matter with the following informations: title, description, tags, slug, author({author}) and date/time({now})."
-                    "The date and time should be in the following format: DD/MM/YYYY HH:MM."
-                    f"The thumbnail should also be set, but with the following url:{img} ." 
+                    f"You also must include the Front Matter with the following informations: title, description, tags, slug"
                     "For improving the text itself, consider that it is a text related to electric cars news, and should be informative and engaging."
                     "Try using different headers, bullet points and other Markdown features to make the text more readable."
                     "Dont use the ``` markers in the markdown text, as they are not necessary in this context and will make the post page fail."
@@ -117,20 +112,37 @@ def format_text(text, img, author, url):
                 "role": "assistant",
                 "content": f"The text should be formatted as the flowing Markdown example: {MD_EXAMPLE}"
             }
-        ]
+        ],
+        response_format=MarkdownFormat
     )
     
-    message = response.choices[0].message.content
-    return message
+    json = response.choices[0].message.content
+    return json
     
-def write_md(text):
-    match = re.search(r'slug:\s*"([^"]+)"', text)
-    slug = match.group(1)
+def format_md(json):
+    header = (
+f'''---
+title: "{json['title']}"
+description: "{json['description']}"
+tags: {json['tags']}
+thumbnail: "{json['thumbnail']}"
+slug: "{json['slug']}"
+author: "{json['author']}"
+date: "{json['date']}"
+---
+'''
+    )
     
+    return header + '\n' + json['text']
+
+def write_md(text, slug):
     with open(f'../content/posts/{slug}.md', 'w') as file:
         file.write(text)
 
 def main():
+    now = datetime.now()
+    now = now.strftime("%d/%m/%Y %H:%M")
+    
     sources = ['electrek.json', 'insideevs.json']
     for source in sources:
         scraped_posts = read_json(source)
@@ -138,8 +150,15 @@ def main():
     
         for post in chosen_posts:
             translated_post = translate_post(post)
-            formated_post = format_text(translated_post, post['image'], post['author'], post['url'])
-            write_md(formated_post)
+            
+            content = format_text(translated_post, post['image'], post['author'], post['url'], now)
+            content = json.loads(content)
+            content['thumbnail'] = post['image']
+            content['author'] = post['author']
+            content['date'] = now
+            
+            formated_post = format_md(content)
+            write_md(formated_post, content['slug'])
 
 
 if __name__ == '__main__':

@@ -5,7 +5,7 @@
         <ContentList path="/posts" v-slot="{ list }">
         <div class="posts-list">
             <div
-            v-for="post in sortedPosts(list)"
+            v-for="post in sortedPosts(list).slice(0, displayCount)"
             :key="post._path"
             class="blog-card rounded-2xl overflow-hidden mb-6 transition-transform transform hover:scale-105"
             >
@@ -44,11 +44,15 @@
 </template>
 
 <script lang="ts" setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import type { ParsedContent } from '@nuxt/content'
 
+// Sem login necessário para a página
 definePageMeta({ auth: false });
 
-// Função para ordenar os posts pela data
+const displayCount = ref(10)
+const loading = ref(false)
+
 function sortedPosts(list: ParsedContent[]) {
   return list.slice().sort((a: ParsedContent, b: ParsedContent) => {
     const dateA = parseDate(a.date);
@@ -57,12 +61,30 @@ function sortedPosts(list: ParsedContent[]) {
   });
 }
 
-// Função para converter a data no formato "DD/MM/AAAA HH:MM" em um objeto Date
 function parseDate(dateStr: string): Date {
   const [day, month, yearAndTime] = dateStr.split('/');
   const [year, time] = yearAndTime.split(' ');
   return new Date(`${year}-${month}-${day}T${time}`);
 }
+
+function handleScroll() {
+  const bottomOfWindow = window.innerHeight + window.scrollY >= document.documentElement.offsetHeight - 10;
+  if (bottomOfWindow && !loading.value) {
+    loading.value = true;
+    setTimeout(() => {
+      displayCount.value += 10;
+      loading.value = false;
+    }, 500);
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
+})
 </script>
 
 <style scoped>
