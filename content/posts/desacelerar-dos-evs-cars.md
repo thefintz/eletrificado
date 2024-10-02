@@ -1,5 +1,5 @@
 ---
-title: "O "Desacelerar dos EVs" Atinge os Carros a Gasolina"
+title: 'O "Desacelerar dos EVs" Atinge os Carros a Gasolina'
 description: "Uma análise sobre a desaceleração na indústria automotiva, incluindo o impacto nos veículos elétricos e a reação dos gigantes do setor."
 tags: ['veículos elétricos', 'indústria automotiva', 'Tesla', 'carros a gasolina', 'híbridos']
 thumbnail: "https://cdn.motor1.com/images/mgl/BXxYQ4/s3/toyota-prius-prime-cm-hero.jpg"
