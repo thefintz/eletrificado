@@ -42,7 +42,6 @@ Além disso, a Volvo está lançando seu carro elétrico insignia de sete lugare
 
 O **Volvo EX30** e sua crescente popularidade evidenciam a mudança do mercado automotivo em direção aos veículos elétricos, com a Volvo se posicionando firmemente para acompanhar essa transformação.
 
----
 
 Este post foi baseado neste artigo da Electrek:  
 **URL:** [Electrek](https://electrek.co/2024/09/20/volvo-ex30-europes-second-best-selling-ev-august/)  
