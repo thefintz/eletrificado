@@ -17,6 +17,7 @@
     "@stripe/stripe-js": "^4.5.0",
     "next-auth": "4.21.1",
     "nuxt": "^3.12.4",
+    "nuxt-gtag": "^3.0.1",
     "nuxt-posthog": "^1.5.1",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.4",
