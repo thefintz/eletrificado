@@ -1,5 +1,5 @@
 ---
-title: 'A 'Rechargery' da Ionna na Carolina do Norte: O Futuro do Carregamento de EV'
+title: 'A "Rechargery" da Ionna na Carolina do Norte: O Futuro do Carregamento de EV'
 description: 'Descubra como a Ionna está transformando a experiência de carregamento de veículos elétricos com suas novas estações Rechargery, projetadas para conforto e eficiência.'
 tags: ['Ionna', 'Carregamento de Veículos Elétricos', 'Rechargery', 'Carros Elétricos', 'Inovação']
 thumbnail: "https://cdn.motor1.com/images/mgl/7Zo2Wo/s3/ionna-rechargery.jpg"

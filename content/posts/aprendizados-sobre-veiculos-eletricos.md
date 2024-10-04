@@ -8,7 +8,6 @@ author: "Patrick George"
 date: "04/10/2024 06:01"
 ---
 
----
 
 ## O Conceito de Entrincheiramento na Indústria Automobilística
 

@@ -103,6 +103,7 @@ def format_text(text, img, author, url, time) -> str:
                     "Try using different headers, bullet points and other Markdown features to make the text more readable."
                     "Dont use the ``` markers in the markdown text, as they are not necessary in this context and will make the post page fail."
                     "Just send the text that will be inside of the Markdown file."
+                    "When you are writing the title and description, use "" instead of '' to avoid conflicts with the Markdown format."
                     f"Also, include in the end of the text that the post was based on this other website (take a look at the url to get it's name) post and author: "
                     f"URL: {url} Author: {author}."
                     f"\nText:\n{text}"
