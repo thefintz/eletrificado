@@ -38,7 +38,7 @@
         </ContentList>
     </section>
     <aside class="lg:col-span-1">
-        <Donation />
+        <Stripe />
     </aside>
   </main>
 </template>
