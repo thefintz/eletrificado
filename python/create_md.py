@@ -123,8 +123,8 @@ def format_text(text, img, author, url, time) -> str:
 def format_md(json):
     header = (
 f'''---
-title: '{json['title']}'
-description: '{json['description']}'
+title: '{json['title'].replace("'", '"')}'
+description: '{json['description'].replace("'", '"')}'
 tags: {json['tags']}
 thumbnail: "{json['thumbnail']}"
 slug: "{json['slug']}"

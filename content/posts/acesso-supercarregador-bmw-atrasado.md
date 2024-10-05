@@ -1,5 +1,5 @@
 ---
-title: 'Acesso ao Supercarregador da BMW Potencialmente Atrasado até 'Mais Tarde em 2025''
+title: 'Acesso ao Supercarregador da BMW Potencialmente Atrasado até "Mais Tarde em 2025"'
 description: 'Confira as últimas notícias sobre o acesso da BMW aos Supercarregadores da Tesla e como isso impacta os proprietários de veículos elétricos.'
 tags: ['BMW', 'Tesla', 'Supercarregadores', 'Veículos Elétricos', 'Notícias']
 thumbnail: "https://cdn.motor1.com/images/mgl/mM3gyA/s3/bmw-supercharging.jpg"
