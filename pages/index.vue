@@ -7,10 +7,10 @@
             <div
             v-for="post in sortedPosts(list).slice(0, displayCount)"
             :key="post._path"
-            class="blog-card rounded-2xl overflow-hidden mb-6 transition-transform transform hover:scale-105"
+            class="blog-card rounded-2xl overflow-hidden mb-6 transition-transform transform hover:scale-100"
             >
             <NuxtLink :to="post.slug" class="block w-full h-full">
-                <div class="h-[300px] relative">
+                <div class="h-[200px] sm:h-[300px] relative">
                 <img
                     v-if="post.thumbnail"
                     :src="post.thumbnail"
@@ -19,12 +19,12 @@
                 />
                 </div>
     
-                <div class="blog-card--meta absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent text-white p-4">
-                <h3 class="text-2xl font-bold text-shadow-lg">{{ post.title }}</h3>
-                <div class="text-sm text-gray-300">{{ post.date.split(' ')[0] }}</div>
-                <div v-if="post.tags" class="mt-2 text-xs flex space-x-2">
+                <div class="blog-card--meta absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent text-white p-3 sm:p-4">
+                <h3 class="text-lg sm:text-2xl font-bold text-shadow-lg">{{ post.title }}</h3>
+                <div class="text-xs sm:text-sm text-gray-300">{{ post.date.split(' ')[0] }}</div>
+                <div v-if="post.tags" class="mt-2 text-xs flex flex-wrap gap-1 sm:space-x-2">
                     <span
-                    v-for="tag in post.tags"
+                    v-for="tag in post.tags.slice(0, 3)"
                     :key="tag"
                     class="bg-gray-800 bg-opacity-75 px-2 py-1 rounded-full"
                     >
