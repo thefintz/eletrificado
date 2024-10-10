@@ -86,7 +86,7 @@ const generatePaymentLink = async () => {
   const selectedAmount = amount.value
 
   if (!selectedAmount) {
-    errorMessage.value = 'Por favor, insira ou selecione um valor válido.'
+    errorMessage.value = 'Por favor, selecione um valor válido.'
     return
   }
 

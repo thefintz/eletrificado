@@ -97,14 +97,15 @@ def format_text(text, img, author, url, time) -> str:
             {
                 "role": "user",
                 "content": (
-                    f"Given the following text and title, improve it and make it compatible with the Markdown format."
-                    f"You also must include the Front Matter with the following informations: title, description, tags, slug"
+                    "Given the following text and title, improve it and make it compatible with the Markdown format."
+                    "You also must include the Front Matter with the following informations: title, description, tags, slug"
+                    "When criating the title, keep it short and concise, with maximum 80 characters. Long titles won't be fully displayed in the website."
                     "For improving the text itself, consider that it is a text related to electric cars news, and should be informative and engaging."
                     "Try using different headers, bullet points and other Markdown features to make the text more readable."
                     "Dont use the ``` markers in the markdown text, as they are not necessary in this context and will make the post page fail."
                     "Just send the text that will be inside of the Markdown file."
                     "When you are writing the title and description, use "" instead of '' to avoid conflicts with the Markdown format."
-                    f"Also, include in the end of the text that the post was based on this other website (take a look at the url to get it's name) post and author: "
+                    "Also, include in the end of the text that the post was based on this other website (take a look at the url to get it's name) post and author: "
                     f"URL: {url} Author: {author}."
                     f"\nText:\n{text}"
                 )

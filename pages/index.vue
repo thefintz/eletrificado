@@ -1,7 +1,7 @@
 <template>
   <main class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
     <section class="lg:col-span-2">
-        <h2 class="text-3xl font-bold mb-6">Últimas notícias</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold mb-6">Últimas notícias</h2>
         <ContentList path="/posts" v-slot="{ list }">
         <div class="posts-list">
             <div
@@ -20,9 +20,9 @@
                 </div>
     
                 <div class="blog-card--meta absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent text-white p-3 sm:p-4">
-                <h3 class="text-lg sm:text-2xl font-bold text-shadow-lg">{{ post.title }}</h3>
+                <h3 class="text-sm sm:text-2xl font-bold text-shadow-lg">{{ truncateText(post.title, titleLength) }}</h3>
                 <div class="text-xs sm:text-sm text-gray-300">{{ post.date.split(' ')[0] }}</div>
-                <div v-if="post.tags" class="mt-2 text-xs flex flex-wrap gap-1 sm:space-x-2">
+                <!-- <div v-if="post.tags" class="mt-2 text-xs flex flex-wrap gap-1 sm:space-x-2">
                     <span
                     v-for="tag in post.tags.slice(0, 3)"
                     :key="tag"
@@ -30,7 +30,7 @@
                     >
                     {{ tag }}
                     </span>
-                </div>
+                </div> -->
                 </div>
             </NuxtLink>
             </div>
@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import type { ParsedContent } from '@nuxt/content'
 
 // Sem login necessário para a página
@@ -52,6 +52,7 @@ definePageMeta({ auth: false });
 
 const displayCount = ref(10)
 const loading = ref(false)
+const screenWidth = ref(0)
 
 function sortedPosts(list: ParsedContent[]) {
   return list.slice().sort((a: ParsedContent, b: ParsedContent) => {
@@ -78,13 +79,35 @@ function handleScroll() {
   }
 }
 
+const titleLength = computed(() => {
+  if (screenWidth.value < 640) return 80
+  if (screenWidth.value < 1024) return 100
+  return 120              
+})
+
+function updateScreenWidth() {
+  if (typeof window !== 'undefined') {
+    screenWidth.value = window.innerWidth
+  }
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
+  if (typeof window !== 'undefined') {
+    screenWidth.value = window.innerWidth
+    window.addEventListener('resize', updateScreenWidth)
+  }
+  window.addEventListener('scroll', handleScroll)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('resize', updateScreenWidth)
 })
+
+function truncateText(text: string | undefined, length: number): string {
+  if (text === undefined) return 'Título não disponível';
+  return text.length > length ? text.substring(0, length) + '...' : text;
+}
 </script>
 
 <style scoped>
