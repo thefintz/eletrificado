@@ -49,7 +49,7 @@
             v-for="preset in presets"
             :key="preset"
             @click="selectAmount(preset)"
-            :class="['px-4 py-2 rounded-full mr-2', { 'bg-blue-600': amount === preset, 'bg-gray-600': amount !== preset }]"
+            :class="['px-3 py-2 rounded-full mr-2', { 'bg-blue-600': amount === preset, 'bg-gray-600': amount !== preset }]"
             class="text-white hover:bg-blue-500 transition-colors"
             >
             R$ {{ preset / 100 }}
