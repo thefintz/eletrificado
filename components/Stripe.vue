@@ -1,16 +1,16 @@
 <template>
-  <aside class="hidden lg:block bg-gray-800 text-white p-6 rounded-xl shadow-2xl">
+  <aside class="hidden lg:block bg-gray-800 text-white p-6 rounded-xl shadow-2xl w-100">
     <h2 class="text-2xl font-bold mb-4">Apoie o Projeto</h2>
     <p class="mb-6">
       Se você gosta de carros elétricos e o nosso conteúdo é útil para você, considere fazer uma doação!
     </p>
 
-    <div class="mb-6">
+    <div class="mb-6 flex flex-wrap gap-1">
       <button
         v-for="preset in presets"
         :key="preset"
         @click="selectAmount(preset)"
-        :class="['px-4 py-2 rounded-full mr-2', { 'bg-blue-600': amount === preset, 'bg-gray-600': amount !== preset }]"
+        :class="['px-3 py-2 rounded-full mr-2', { 'bg-blue-600': amount === preset, 'bg-gray-600': amount !== preset }]"
         class="text-white hover:bg-blue-500 transition-colors"
       >
         R$ {{ preset / 100 }}
