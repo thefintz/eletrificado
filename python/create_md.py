@@ -2,7 +2,6 @@ import json
 import re
 from openai import OpenAI
 from pydantic import BaseModel
-from scrapy.utils.python import List
 from datetime import datetime
 
 # Uncomment for local development
@@ -14,7 +13,7 @@ client = OpenAI()
 class MarkdownFormat(BaseModel):
     title: str
     description: str
-    tags: List[str]
+    tags: list[str]
     slug: str
     text: str
 
@@ -41,7 +40,7 @@ MD_EXAMPLE = (
     '''
 )
 
-def read_json(file) -> List[dict]:
+def read_json(file) -> list[dict]:
     with open(file, 'r') as file:
         data = json.load(file)
         
